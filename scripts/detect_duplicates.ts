@@ -177,7 +177,7 @@ export async function fetchExistingIssues(
         return false;
       }
 
-      // Exclude noise (spam/invalid/wontfix/duplicate)
+      // Exclude noise (duplicate)
       if (hasExcludedLabel(issue)) {
         return false;
       }
