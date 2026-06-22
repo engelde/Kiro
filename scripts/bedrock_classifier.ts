@@ -1,6 +1,6 @@
 /**
  * Bedrock Classifier Module
- * Classifies GitHub issues using AWS Bedrock Claude Sonnet 4.5
+ * Classifies GitHub issues using AWS Bedrock Claude Opus 4.6
  */
 
 import {
@@ -10,10 +10,9 @@ import {
 import { ClassificationResult, LabelTaxonomy } from "./data_models.js";
 import { retryWithBackoff } from "./retry_utils.js";
 
-const MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0";
+const MODEL_ID = "us.anthropic.claude-opus-4-6-v1";
 const MAX_TOKENS = 2048;
 const TEMPERATURE = 0.3;
-const TOP_P = 0.9;
 
 // Security: Maximum lengths for input validation
 const MAX_TITLE_LENGTH = 500;
@@ -209,7 +208,6 @@ export async function classifyIssue(
           anthropic_version: "bedrock-2023-05-31",
           max_tokens: MAX_TOKENS,
           temperature: TEMPERATURE,
-          top_p: TOP_P,
           messages: [
             {
               role: "user",
