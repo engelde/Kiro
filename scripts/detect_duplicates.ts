@@ -11,7 +11,7 @@ import {
 import { DuplicateMatch, IssueData } from "./data_models.js";
 import { retryWithBackoff } from "./retry_utils.js";
 
-const MODEL_ID = "us.anthropic.claude-opus-4-6-v1";
+const MODEL_ID = "us.anthropic.claude-sonnet-4-6";
 const SIMILARITY_THRESHOLD = 0.8;
 const BATCH_SIZE = 10;
 
