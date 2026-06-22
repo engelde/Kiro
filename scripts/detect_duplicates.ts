@@ -11,7 +11,7 @@ import {
 import { DuplicateMatch, IssueData } from "./data_models.js";
 import { retryWithBackoff } from "./retry_utils.js";
 
-const MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0";
+const MODEL_ID = "us.anthropic.claude-opus-4-6-v1";
 const SIMILARITY_THRESHOLD = 0.8;
 const BATCH_SIZE = 10;
 
@@ -316,7 +316,6 @@ async function analyzeBatchForDuplicates(
           anthropic_version: "bedrock-2023-05-31",
           max_tokens: 2048,
           temperature: 0.3,
-          top_p: 0.9,
           messages: [
             {
               role: "user",
